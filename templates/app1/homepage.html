@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ALL CARS</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+	<div class="container">
+
+
+		{% for car in cars %}
+		<h1>{{car.nom}}</h1>
+
+		<h3>Karobka: {{car.karobka}}</h3>
+		<h3>narxi: {{car.narxi}}</h3>
+		<h3>yili: {{car.yili}}</h3>
+		<h3>motor: {{car.mator}}</h3>
+		<h3>rang: {{car.rang}}</h3>
+		<h3>soni: {{car.soni}}</h3>
+
+		<a class="btn btn-md btn-info" href="{% url 'update_cars' car.id %}">Update</a>
+		<a class="btn btn-md btn-danger" href="{% url 'delete_cars' car.id %}">Delete</a>
+		<hr>
+
+	{% endfor %}
+
+	<div>
+		<a class="btn btn-sm btn-danger" href="{% url 'create_cars' %}">Add Cars</a>
+	</div>
+		
+	</div>
+
+	<script src="{% static 'js/bootstrap.min.js' %}" ></script>
+
+</body>
+</html>

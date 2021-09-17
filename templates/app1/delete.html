@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Cars</title>
+</head>
+<body>
+	<p>Are you sure to delete "{{form}}"?</p>
+
+	<form method="POST">
+		{% csrf_token %}
+		<a class="btn btn-md btn-info" href="{% url 'home' %}">Cancel</a>
+		<input type="submit" name="Confirm">
+	</form>
+</body>
+</html>
